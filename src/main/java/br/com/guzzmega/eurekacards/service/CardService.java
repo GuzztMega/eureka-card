@@ -1,26 +1,27 @@
-//package br.com.guzzmega.eurekacards.service;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//import javax.transaction.Transactional;
-//
-//@Service
-//public class CardService {
-//
-//	@Autowired
-//	private CardRepository repository;
-//
-//	@Transactional
-//	public Card save(Card object){
-//		return repository.save(object);
-//	}
-//
-//	public Optional<Card> getByDocument(String document){
-//		return repository.findByDocument(document);
-//	}
-//
-//	public List<Card> findAll(){
-//		return repository.findAll();
-//	}
-//}
+package br.com.guzzmega.eurekacards.service;
+
+import br.com.guzzmega.eurekacards.domain.Card;
+import br.com.guzzmega.eurekacards.infra.Repository.CardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+@Service
+public class CardService {
+
+	@Autowired
+	private CardRepository repository;
+
+	@Transactional
+	public Card save(Card object){
+		return repository.save(object);
+	}
+
+	public List<Card> getCardsByIncome(Long income){
+		return repository.findByIncomeLessThanEqual(BigDecimal.valueOf(income));
+	}
+}
