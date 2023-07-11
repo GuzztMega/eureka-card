@@ -1,8 +1,8 @@
 spring:
   application:
-      name: eurekacards
+    name: eureka-card
 
-sever:
+server:
   port: 0
 
 eureka:

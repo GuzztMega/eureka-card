@@ -29,4 +29,12 @@ public class Card {
 		this.basicLimit = basicLimit;
 		this.cardBrand = cardBrand;
 	}
+
+	public Card(UUID id, String name, BigDecimal income, BigDecimal basicLimit, CardBrand cardBrand){
+		this.id = id;
+		this.name = name;
+		this.income = income;
+		this.basicLimit = basicLimit;
+		this.cardBrand = cardBrand;
+	}
 }
