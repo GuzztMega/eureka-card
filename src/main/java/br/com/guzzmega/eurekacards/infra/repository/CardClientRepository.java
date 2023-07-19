@@ -1,4 +1,4 @@
-package br.com.guzzmega.eurekacards.infra.Repository;
+package br.com.guzzmega.eurekacards.infra.repository;
 
 import br.com.guzzmega.eurekacards.domain.CardClient;
 import org.springframework.data.jpa.repository.JpaRepository;

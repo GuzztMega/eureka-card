@@ -1,6 +1,6 @@
 package br.com.guzzmega.eurekacards.domain;
 
-import br.com.guzzmega.eurekacards.infra.Repository.CardRepository;
+import br.com.guzzmega.eurekacards.infra.repository.CardRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

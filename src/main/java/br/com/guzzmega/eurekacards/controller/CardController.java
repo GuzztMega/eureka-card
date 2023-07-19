@@ -30,7 +30,7 @@ public class CardController {
 	@GetMapping("/health")
 	public String status(){
 		log.info("Checking cards microservice status...");
-		return "Application Status: UP!";
+		return "Cards Application Status: UP!";
 	}
 
 	@PostMapping

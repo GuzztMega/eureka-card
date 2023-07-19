@@ -11,6 +11,6 @@ public class CardDTO {
 	private String name;
 	private CardBrand cardBrand;
 	private BigDecimal income;
-	private BigDecimal limit;
+	private BigDecimal basicLimit;
 
 }
