@@ -12,6 +12,7 @@ public class Card {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(columnDefinition = "uuid")
 	private UUID id;
 	private String name;
 	private BigDecimal income;
@@ -37,4 +38,13 @@ public class Card {
 		this.basicLimit = basicLimit;
 		this.cardBrand = cardBrand;
 	}
+
+	public String toString(){
+		return "ID: " + getId()
+				+ ", Name: " + getName()
+				+ ", Income: " + getIncome()
+				+ ", BasicLimit: " + getBasicLimit()
+				+ ", CardBrand: " + getCardBrand();
+	}
+
 }

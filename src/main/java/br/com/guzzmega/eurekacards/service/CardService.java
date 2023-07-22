@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class CardService {
@@ -19,6 +21,10 @@ public class CardService {
 	@Transactional
 	public Card save(Card object){
 		return repository.save(object);
+	}
+
+	public Optional<Card> getCardById(UUID id){
+		return repository.findById(id);
 	}
 
 	public List<Card> getCardsByIncome(Long income){
