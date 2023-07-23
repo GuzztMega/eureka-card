@@ -6,11 +6,13 @@ import br.com.guzzmega.eurekacards.domain.CardEmission;
 import br.com.guzzmega.eurekacards.infra.repository.CardCustomerRepository;
 import br.com.guzzmega.eurekacards.infra.repository.CardRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class CardEmissionSubscriber {
 
@@ -28,7 +30,7 @@ public class CardEmissionSubscriber {
 
 			cardCustomerRepository.save(new CardCustomer(card, cardEmission.getDocument(), cardEmission.getBasicLimit()));
 		} catch(Exception ex){
-			ex.printStackTrace();
+			log.error("An error occurred while receiving the card issue request: {}", ex.getMessage());
 		}
 	}
 }

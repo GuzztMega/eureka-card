@@ -51,7 +51,6 @@ public class CardController {
 		return ResponseEntity.ok(cardList);
 	}
 
-
 	@GetMapping(params = "id")
 	public ResponseEntity<CardDTO> getCardById(@RequestParam("id") UUID id){
 		Optional<Card> optional = cardService.getCardById(id);
