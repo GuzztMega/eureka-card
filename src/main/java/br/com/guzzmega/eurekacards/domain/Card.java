@@ -21,7 +21,6 @@ public class Card {
 	private CardBrand cardBrand;
 
 	public Card(){
-
 	}
 
 	public Card(String name, BigDecimal income, BigDecimal basicLimit, CardBrand cardBrand){
